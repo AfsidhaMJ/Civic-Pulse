@@ -40,7 +40,20 @@ for path, default in [(DATA_FILE, []), (AUTH_FILE, {})]:
 
 app = Flask(__name__, static_folder=FRONTEND_DIR, static_url_path="")
 app.secret_key = os.environ.get("SECRET_KEY", "civicpulse-dev-secret-change-in-prod")
-CORS(app, supports_credentials=True)
+
+# ✅ FIX 1: Explicitly allow localhost:8080 origin with credentials
+CORS(app,
+     supports_credentials=True,
+     origins=["http://localhost:8080", "http://127.0.0.1:8080"],
+     methods=["GET", "POST", "PATCH", "DELETE", "OPTIONS"],
+     allow_headers=["Content-Type", "Authorization"])
+
+# ✅ FIX 2: Session cookie must be accessible from same-origin fetch calls
+app.config.update(
+    SESSION_COOKIE_SAMESITE="Lax",   # was missing — caused session loss on POST
+    SESSION_COOKIE_HTTPONLY=True,
+    SESSION_COOKIE_SECURE=False,      # False for HTTP localhost dev
+)
 
 # ── Constants ─────────────────────────────────────────────────────────────────
 
@@ -362,7 +375,7 @@ def authority_stats():
         },
     })
 
-# ── Public citizen routes (unchanged) ─────────────────────────────────────────
+# ── Public citizen routes ──────────────────────────────────────────────────────
 
 @app.post("/api/report")
 def report_issue():

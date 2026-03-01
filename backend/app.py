@@ -483,12 +483,12 @@ def method_not_allowed(e):
     return jsonify({"success": False, "error": "Method not allowed."}), 405
 
 if __name__ == "__main__":
-    print("\n🌿 CivicPulse running at http://localhost:8080")
-    print("   Authority portal → http://localhost:8080/authority")
+    print("\n🌿 CivicPulse running at http://localhost:5500")
+    print("   Authority portal → http://localhost:5500/authority")
     print("   complaints.json  →", DATA_FILE)
     print("   authorities.json →", AUTH_FILE)
     print("\n   Default logins:")
     print("   admin / admin123   (all departments)")
     print("   publicworks / pw123")
     print("   utilities / ut123\n")
-    app.run(debug=True, port=8080)
+    app.run(debug=True, port=5500)

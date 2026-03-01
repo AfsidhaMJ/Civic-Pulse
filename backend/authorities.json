@@ -1,0 +1,37 @@
+{
+  "publicworks": {
+    "name": "Public Works Dept.",
+    "department": "Public Works",
+    "password_hash": "23d47445adfb8991789b459b6ba1b974d727d310aa9d80b7c2875b9430c0ba25"
+  },
+  "utilities": {
+    "name": "Utilities Board",
+    "department": "Utilities Board",
+    "password_hash": "27a029f5f643254181cba1d08765965bb236d82a06e7225ff398c5f79fbd0a85"
+  },
+  "parks": {
+    "name": "Parks & Recreation",
+    "department": "Parks & Recreation",
+    "password_hash": "ed7b75c48abbe159798a83021142cb3a75c4c66f1b450a1dedba3f0610b4df71"
+  },
+  "sanitation": {
+    "name": "Sanitation Dept.",
+    "department": "Sanitation Dept.",
+    "password_hash": "ec2530898dfc89ee54e044c849336e8eeb7d0be9d4767f7658fa1e43298411ee"
+  },
+  "water": {
+    "name": "Water Authority",
+    "department": "Water Authority",
+    "password_hash": "cc701766a73349cc86f799892cb6ca919c8132b5cc9df30576ca97203e547ffa"
+  },
+  "emergency": {
+    "name": "Emergency Services",
+    "department": "Emergency Services",
+    "password_hash": "56add016e7d45a4c6d397ea00dbf4bbf6be9671f283a3999e22be7164cae40a0"
+  },
+  "admin": {
+    "name": "Admin (All Departments)",
+    "department": "ALL",
+    "password_hash": "240be518fabd2724ddb6f04eeb1da5967448d7e831c08c8fa822809f74c720a9"
+  }
+}
